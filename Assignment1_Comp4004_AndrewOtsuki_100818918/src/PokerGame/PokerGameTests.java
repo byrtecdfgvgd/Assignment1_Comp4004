@@ -1,4 +1,4 @@
-package JunitTests;
+package PokerGame;
 
 import static org.junit.Assert.*;
 
