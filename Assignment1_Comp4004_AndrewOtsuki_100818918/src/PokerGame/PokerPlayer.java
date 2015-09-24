@@ -75,8 +75,20 @@ public class PokerPlayer {
 	//END GET and SET methods
 	
 	//returns string representation of player data
+	//returns string representation of player data
 	public String toString()
 	{
-		return "";
+		String output = "";
+		
+		output = id;
+		
+		for (int i = 0;i < 5; i++)
+		{
+			output += " " + hand[i].toString();
+		}
+		
+		
+		return output;
+	
 	}
 }
