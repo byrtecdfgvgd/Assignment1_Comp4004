@@ -18,10 +18,23 @@ public class PokerGameTests {
 		//Testing GET and Set Methods for a Players
 		//ID
 		testPlayer.setID("player1");
-		
 		assertEquals("player1", testPlayer.getID());
 		
 		
+		//Testing setCardAtI() and getcard()
+		testPlayer.setCardAtI(0, "FourClubs");
+		assertEquals("FourClubs", testPlayer.getCard(0).toString());
+		
+		
+		
+		//Testing setPlayer()
+		//extracts id and card info from string
+		//testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
+		
+		
+		//assertEquals("Player1", testPlayer.getID());
+		//assertEquals("TwoHearts", testPlayer.getCard(0));
+		//assertEquals("SixHearts", testPlayer.getCard(5));
 	}
 	
 	
