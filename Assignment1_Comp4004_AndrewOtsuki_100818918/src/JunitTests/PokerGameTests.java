@@ -19,5 +19,11 @@ public class PokerGameTests {
 		
 		assertEquals(6, testCard.getNumber());
 		
+		//test get and set methods for card suit
+		//these functions must be tested together as 
+		//I need a way to check the private variables
+		testCard.setSuit(1);
+		
+		assertEquals(1, testCard.getSuit());
 	}
 }

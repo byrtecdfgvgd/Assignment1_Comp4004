@@ -14,4 +14,14 @@ public class Card {
 	{
 		return number;
 	}
+	
+	public void setSuit (int sui)
+	{
+	}
+	
+	public int getSuit ()
+	{
+		return 0;
+	}
+	//END GET AND SET METHODS
 }
