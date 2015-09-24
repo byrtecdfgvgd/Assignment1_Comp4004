@@ -27,10 +27,10 @@ public class Card {
 	//END BASIC GET AND SET METHODS
 	
 	//SetCard: sets the card variables form string input
-	//public int setCard(String myCard)
-	//{
-	//	return 0;
-	//}
+	public int setCard(String myCard)
+	{
+		return 0;
+	}
 	
 	public String toString()
 	{
