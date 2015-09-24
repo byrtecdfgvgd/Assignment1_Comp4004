@@ -26,15 +26,12 @@ public class PokerGameTests {
 		assertEquals("FourClubs", testPlayer.getCard(0).toString());
 		
 		
-		
 		//Testing setPlayer()
 		//extracts id and card info from string
-		//testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
-		
-		
-		//assertEquals("Player1", testPlayer.getID());
-		//assertEquals("TwoHearts", testPlayer.getCard(0));
-		//assertEquals("SixHearts", testPlayer.getCard(5));
+		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
+		assertEquals("Player1", testPlayer.getID());
+		assertEquals("TwoHearts", testPlayer.getCard(0));
+		assertEquals("SixHearts", testPlayer.getCard(5));
 	}
 	
 	

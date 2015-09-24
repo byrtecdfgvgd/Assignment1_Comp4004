@@ -7,7 +7,6 @@ public class PokerPlayer {
 	private HandData handValue;
 	
 	//GET and SET Methods
-	//GET and SET Methods
 	public PokerPlayer()
 	{
 		hand = new Card [5];
@@ -39,8 +38,8 @@ public class PokerPlayer {
 	}
 	
 	//extracts ID and card data from input string
-	//public void setPlayer(String input)
-	//{
-	//}
+	public void setPlayer(String input)
+	{
+	}
 	//END GET and SET methods
 }
