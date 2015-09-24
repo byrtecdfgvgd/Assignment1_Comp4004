@@ -30,8 +30,8 @@ public class PokerGameTests {
 		//extracts id and card info from string
 		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
 		assertEquals("Player1", testPlayer.getID());
-		assertEquals("TwoHearts", testPlayer.getCard(0));
-		assertEquals("SixHearts", testPlayer.getCard(5));
+		assertEquals("TwoHearts", testPlayer.getCard(0).toString());
+		assertEquals("SixHearts", testPlayer.getCard(4).toString());
 	}
 	
 	

@@ -40,6 +40,37 @@ public class PokerPlayer {
 	//extracts ID and card data from input string
 	public void setPlayer(String input)
 	{
+		int k = 0, cardNum = 0;
+		String subStr = "";
+		
+		id  = "N/A";
+		
+		while (k < input.length())
+		{
+			if (input.charAt(k) != ' ')
+			{
+				subStr += input.charAt(k);
+			}
+			else
+			{
+				if (id.compareTo("N/A") == 0)
+				{
+					id = subStr;
+					subStr = "";
+				}
+				else
+				{
+					hand[cardNum].setCard(subStr); 
+					cardNum++;
+					subStr = "";
+				}
+			}
+			
+			k++;
+		}
+		
+		hand[cardNum] = new Card();
+		hand[cardNum].setCard(subStr); 
 	}
 	//END GET and SET methods
 }
