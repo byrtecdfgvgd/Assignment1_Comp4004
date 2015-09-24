@@ -29,6 +29,85 @@ public class Card {
 	//SetCard: sets the card variables form string input
 	public int setCard(String myCard)
 	{
+		if (myCard.indexOf("Two") != -1)
+		{
+			number = 2;
+		}
+		else if (myCard.indexOf("Three") != -1)
+		{
+			number = 3;
+		}
+		else if (myCard.indexOf("Four") != -1)
+		{
+			number = 4;
+		}
+		else if (myCard.indexOf("Five") != -1)
+		{
+			number = 5;
+		}
+		else if (myCard.indexOf("Six") != -1)
+		{
+			number = 6;
+		}
+		else if (myCard.indexOf("Seven") != -1)
+		{
+			number = 7;
+		}
+		else if (myCard.indexOf("Eight") != -1)
+		{
+			number = 8;
+		}
+		else if (myCard.indexOf("Nine") != -1)
+		{
+			number = 9;
+		}
+		else if (myCard.indexOf("Ten") != -1)
+		{
+			number = 10;
+		}
+		else if (myCard.indexOf("Jack") != -1)
+		{
+			number = 11;
+		}
+		else if (myCard.indexOf("Queen") != -1)
+		{
+			number = 12;
+		}
+		else if (myCard.indexOf("King") != -1)
+		{
+			number = 13;
+		}
+		else if (myCard.indexOf("Ace") != -1)
+		{
+			number = 14;
+		}
+		else
+		{
+			return -1;
+		}
+		
+		if (myCard.indexOf("Club") != -1)
+		{
+			suit = 1;
+		}	
+		else if (myCard.indexOf("Heart") != -1)
+		{
+			suit = 2;
+		}
+		else if (myCard.indexOf("Spade") != -1)
+		{
+			suit = 3;
+		}
+		else if (myCard.indexOf("Diamond") != -1)
+		{
+			suit = 4;
+		}
+		else
+		{
+			return -2;
+		}
+		
+		
 		return 0;
 	}
 	
