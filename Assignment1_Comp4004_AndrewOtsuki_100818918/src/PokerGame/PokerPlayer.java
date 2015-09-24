@@ -11,6 +11,11 @@ public class PokerPlayer {
 	public PokerPlayer()
 	{
 		hand = new Card [5];
+		
+		for (int i = 0; i < 5; i++)
+		{
+			hand[i] = new Card();
+		}
 	}
 	
 	public String getID()
@@ -25,12 +30,12 @@ public class PokerPlayer {
 	
 	public Card getCard(int index)
 	{
-		return new Card();
+		return hand[index];
 	}
 	
 	public void setCardAtI(int index, String myCard)
 	{
-		
+		hand[index].setCard(myCard);
 	}
 	
 	//extracts ID and card data from input string
