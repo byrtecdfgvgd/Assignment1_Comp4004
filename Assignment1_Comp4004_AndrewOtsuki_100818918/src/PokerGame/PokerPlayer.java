@@ -7,15 +7,16 @@ public class PokerPlayer {
 	public HandData handValue;
 	
 	//GET and SET Methods
+	//GET and SET Methods
 	public String getID()
 	{
-		return "";
+		return id;
 	}
-	
+			
 	public void setID(String newID)
 	{
+		id = newID;
 	}
-	
 	//END GET and SET methods
 	
 }

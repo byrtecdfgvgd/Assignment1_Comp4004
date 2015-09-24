@@ -20,6 +20,8 @@ public class PokerGameTests {
 		testPlayer.setID("player1");
 		
 		assertEquals("player1", testPlayer.getID());
+		
+		
 	}
 	
 	
