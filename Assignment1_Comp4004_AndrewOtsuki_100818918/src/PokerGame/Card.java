@@ -4,7 +4,7 @@ public class Card {
 
 	private int number, suit;
 	
-	//GET AND SET METHODS
+	//BASIC GET AND SET METHODS
 	public void setNumber (int num)
 	{
 		number = num;
@@ -24,5 +24,18 @@ public class Card {
 	{
 		return suit;
 	}
-	//END GET AND SET METHODS
+	//END BASIC GET AND SET METHODS
+	
+	//SetCard: sets the card variables form string input
+	//public int setCard(String myCard)
+	//{
+	//	return 0;
+	//}
+	
+	public String toString()
+	{
+		return "";
+	}
+	
+	
 }
