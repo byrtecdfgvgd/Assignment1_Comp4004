@@ -1,4 +1,4 @@
-package JunitTests;
+package PokerGame;
 
 public class HandData {
 	public int      flush = -1,
