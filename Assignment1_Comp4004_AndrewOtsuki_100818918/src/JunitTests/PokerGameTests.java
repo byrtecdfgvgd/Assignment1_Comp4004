@@ -32,6 +32,9 @@ public class PokerGameTests {
 		assertEquals("Player1", testPlayer.getID());
 		assertEquals("TwoHearts", testPlayer.getCard(0).toString());
 		assertEquals("SixHearts", testPlayer.getCard(4).toString());
+		
+		//Testing PokerPlayer toString() function
+		assertEquals("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts" ,testPlayer.toString());
 	}
 	
 	

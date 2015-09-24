@@ -73,4 +73,10 @@ public class PokerPlayer {
 		hand[cardNum].setCard(subStr); 
 	}
 	//END GET and SET methods
+	
+	//returns string representation of player data
+	public String toString()
+	{
+		return "";
+	}
 }
