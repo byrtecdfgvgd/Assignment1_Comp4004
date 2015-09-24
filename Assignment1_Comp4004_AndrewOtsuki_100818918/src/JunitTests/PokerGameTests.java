@@ -5,9 +5,25 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import PokerGame.Card;
+import PokerGame.PokerPlayer;
 
 public class PokerGameTests {
-
+	
+	//Tests for PokerPlayers
+	@Test
+	public void testPlayers()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
+		
+		//Testing GET and Set Methods for a Players
+		//ID
+		testPlayer.setID("player1");
+		
+		assertEquals("player1", testPlayer.getID());
+	}
+	
+	
+	//TESTS FOR CARDS
 	@Test
 	public void testCards()
 	{
