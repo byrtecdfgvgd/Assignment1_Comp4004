@@ -7,10 +7,11 @@ public class Card {
 	//GET AND SET METHODS
 	public void setNumber (int num)
 	{
+		number = num;
 	}
 	
 	public int getNumber ()
 	{
-		return 0;
+		return number;
 	}
 }
