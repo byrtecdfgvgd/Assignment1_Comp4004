@@ -17,11 +17,12 @@ public class Card {
 	
 	public void setSuit (int sui)
 	{
+		suit = sui;
 	}
 	
 	public int getSuit ()
 	{
-		return 0;
+		return suit;
 	}
 	//END GET AND SET METHODS
 }
