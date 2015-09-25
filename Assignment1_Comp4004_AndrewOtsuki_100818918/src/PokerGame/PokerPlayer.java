@@ -142,7 +142,7 @@ public class PokerPlayer {
 		}
 	}
 	
-	//returns High Card if present
+	//returns High Card if present//
 	protected int checkFourOAK()
 	{		
 		for (int i = 3; i < hand.length; i++)
