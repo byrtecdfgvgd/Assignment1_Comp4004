@@ -190,6 +190,14 @@ public class PokerPlayer {
 	//and it is not equal to the three of a kind should that also be present
 	protected int checkPair2(int pair1, int fourOAK, int threeOAK)
 	{
+		for (int i = 1; i < hand.length; i++)
+		{
+			if (hand[i - 1].getNumber() == hand[i].getNumber() && hand[i].getNumber() != pair1 &&
+					hand[i].getNumber() != fourOAK && hand[i].getNumber() != threeOAK)
+			{
+				return hand[i].getNumber();
+			}
+		}
 		return -1;
 	}
 }
