@@ -8,6 +8,39 @@ import PokerGame.Card;
 import PokerGame.PokerPlayer;
 
 public class PokerGameTests {
+
+	//Tests for PokerGames
+	@Test
+	public void testGames()
+	{
+		//Setting up variables for testing
+		PokerGame myGame = new PokerGame();
+		
+		myGame.players = new PokerPlayer[4];
+		myGame.numPlayers = 4;
+		
+		for (int  i = 0; i < 4; i++)
+		{
+			myGame.players[i] = new PokerPlayer();
+		}
+		
+		
+		myGame.players[0].setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
+		myGame.players[1].setPlayer("Player2 TwoHearts TwoDiamonds NineClubs JackClubs KingClubs");
+		myGame.players[2].setPlayer("Player3 ThreeDiamonds FourDiamonds FiveDiamonds SixDiamonds SevenDiamonds");
+		myGame.players[3].setPlayer("Player4 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs");
+
+		for (int i = 0; i < 4; i++)
+		{
+			myGame.players[i].sortHand();
+			myGame.players[i].getHandValue();
+		}
+		
+		//testing flip players
+		myGame.flipPlayers(0,1);
+		assertEquals("Player2", myGame.players[0].getID());
+	}
+	
 	
 	//Tests for PokerPlayers
 	@Test
