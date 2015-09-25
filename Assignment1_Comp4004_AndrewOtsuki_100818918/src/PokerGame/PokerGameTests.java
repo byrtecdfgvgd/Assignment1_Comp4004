@@ -51,11 +51,18 @@ public class PokerGameTests {
 		//testing checkStraight()
 		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
 		assertEquals(6 ,testPlayer.checkStraight());
+		//non-straight
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkStraight());
 		
-		
+		//testing checkFourOAK()
+		testPlayer.setPlayer("Player1 TwoHearts TwoDiamonds TwoClubs TwoSpades SixHearts");
+		assertEquals(2 ,testPlayer.checkFourOAK());
+		//non-4OAK
+		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
+		testPlayer.sortHand();
+		assertEquals(-1 ,testPlayer.checkFourOAK());		
 	}
 	
 	

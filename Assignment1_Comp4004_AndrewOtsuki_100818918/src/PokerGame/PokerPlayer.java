@@ -141,4 +141,19 @@ public class PokerPlayer {
 			return -1;
 		}
 	}
+	
+	//returns High Card if present
+	protected int checkFourOAK()
+	{		
+		for (int i = 3; i < hand.length; i++)
+		{
+			if (hand[i - 3].getNumber() == hand[i-2].getNumber() && hand[i-2].getNumber() == hand[i-1].getNumber() 
+					&& hand[i-1].getNumber() == hand[i].getNumber())
+			{
+				return hand[i].getNumber();
+			}
+		}
+		
+		return -1;
+	}
 }
