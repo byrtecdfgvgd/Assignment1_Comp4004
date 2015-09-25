@@ -75,7 +75,6 @@ public class PokerPlayer {
 	//END GET and SET methods
 	
 	//returns string representation of player data
-	//returns string representation of player data
 	public String toString()
 	{
 		String output = "";
@@ -93,7 +92,7 @@ public class PokerPlayer {
 	}
 	
 	//Sorts the players hand numerically
-	public void sortHand()
+	protected void sortHand()
 	{
 		//sort Hand 
 		for (int i = 0; i < hand.length; i++)
@@ -108,5 +107,13 @@ public class PokerPlayer {
 				}
 			}
 		}
+	}
+	
+	// -> Int
+	//checks if there is a flush in the hand i.e. all 1 suit
+	//returns High Card if present
+	protected int checkFlush()
+	{
+		return 0;
 	}
 }

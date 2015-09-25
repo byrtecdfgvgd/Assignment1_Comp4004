@@ -40,6 +40,9 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts SixHearts TwoHearts FourHearts");
 		testPlayer.sortHand();
 		assertEquals ("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts", testPlayer.toString());
+		
+		//testing Check Flush
+		assertEquals(6 ,testPlayer.checkFlush());
 	}
 	
 	
