@@ -85,9 +85,9 @@ public class PokerGameTests {
 		assertEquals(-1 ,testPlayer.checkPair(-1, -1));
 		
 		//testing checkPair2
-		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs ThreeSpades SixHearts");
+		testPlayer.setPlayer("Player1 TwoHearts ThreeClubs TwoClubs ThreeSpades SixHearts");
 		testPlayer.sortHand();
-		assertEquals(2 ,testPlayer.checkPair2(2, -1, -1));
+		assertEquals(2 ,testPlayer.checkPair2(3, -1, -1));
 		//non-pair
 		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs FourSpades SixHearts");
 		testPlayer.sortHand();
