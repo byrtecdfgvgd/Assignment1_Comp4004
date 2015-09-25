@@ -1,5 +1,7 @@
 package PokerGame;
 
+import java.util.Scanner;
+
 public class PokerGame {
 
 	public PokerPlayer[] players;
@@ -145,5 +147,70 @@ public class PokerGame {
 			}
 		}
 	}
+	
+	//These functions cannot really be tested, but are simply what I would have had in the main function
+	//broken up neatly to encapsulate what the main function needs to do as far as getting input and outputting the hands
+	
+	//prints out players with thier ranks
+	//cannot be tested as all it does is print out the toString() 
+	//function for each player, which itself has been tested
+	public void printPlayers()
+	{
+		int rank = 1;
+		
+		for (int i = numPlayers - 1; i >= 0; i--)
+		{
+			System.out.println(players[i].toString() + " " + rank);
+			rank++;
+		}
+	}
+	
+	//sets up game and all related variables
+	//cannot be tested due to need for user input, however the function is very simple
+	public void setUpGame()
+	{
+		Scanner keyboard = new Scanner(System.in);
+		String input;
+		
+		numPlayers = 0;
+		
+		System.out.println("How many players? enter a number for 2-4, and press enter.");
+		numPlayers = keyboard.nextInt();
+		input = keyboard.nextLine();
+		input = "";
+		
+		players = new PokerPlayer[numPlayers];
+		
+		for (int i = 0; i < numPlayers; i++)
+		{
+			players[i] = new PokerPlayer();
+			
+			System.out.println("input players hand i.e. Player1 OneHearts TwoHearts ThreeClubs fourClubs fiveClubs");
+			input = keyboard.nextLine();
+			
+			players[i].setPlayer(input);
+			
+			
+			players[i].getHandValue();
+		}
+		
+		keyboard.close();
+	}
+	
+	//PokerGame Assignment - call to play assignment game
+	public void playGame()
+	{
+		//sets up the game
+		setUpGame();
+		
+		//sorts the hands worst to best
+		sortHands();
+		
+		//prints all the players out by rank
+		printPlayers();
+		
+		
+	}
+	
 	
 }
