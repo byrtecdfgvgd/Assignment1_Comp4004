@@ -36,7 +36,7 @@ public class PokerGameTests {
 		//Testing PokerPlayer toString() function
 		assertEquals("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts" ,testPlayer.toString());
 		
-		//Testing sortHand
+		//Testing sortHand()
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts SixHearts TwoHearts FourHearts");
 		testPlayer.sortHand();
 		assertEquals ("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts", testPlayer.toString());

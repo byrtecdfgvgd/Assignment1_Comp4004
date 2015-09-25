@@ -92,7 +92,7 @@ public class PokerPlayer {
 	
 	}
 	
-	//Sorts the players hand numerically
+	//Sorts the players hand numerically//
 	public void sortHand()
 	{
 	}
