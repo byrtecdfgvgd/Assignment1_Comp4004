@@ -4,7 +4,7 @@ public class PokerPlayer {
 	
 	private String id;
 	private Card hand[];
-	private HandData handValue;
+	protected HandData handValue;
 	
 	//GET and SET Methods
 	public PokerPlayer()
@@ -199,5 +199,11 @@ public class PokerPlayer {
 			}
 		}
 		return -1;
+	}
+	
+	//checks the value of a hand i.e. flush, high card, pair, etc.
+	public void getHandValue()
+	{
+		
 	}
 }

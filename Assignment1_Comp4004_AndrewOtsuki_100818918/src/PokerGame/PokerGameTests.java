@@ -91,7 +91,21 @@ public class PokerGameTests {
 		//non-pair
 		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs FourSpades SixHearts");
 		testPlayer.sortHand();
-		assertEquals(-1 ,testPlayer.checkPair2(2, -1, -1));		
+		assertEquals(-1 ,testPlayer.checkPair2(2, -1, -1));	
+		
+		//Tests for getHandValue()
+		//checking for a flush
+		testPlayer.getHandValue();
+		assertEquals(6, testPlayer.handValue.flush);
+		//checking for a straight
+		assertEquals(6, testPlayer.handValue.straight);
+		//checking the function has read a straight flush
+		assertEquals(8, testPlayer.handValue.handVal);
+		//the rest should be -1 (not present)
+		assertEquals(-1, testPlayer.handValue.fourOAK);
+		assertEquals(-1, testPlayer.handValue.threeOAK);
+		assertEquals(-1, testPlayer.handValue.pair2);
+		assertEquals(-1, testPlayer.handValue.pair1);
 		
 	}
 	
