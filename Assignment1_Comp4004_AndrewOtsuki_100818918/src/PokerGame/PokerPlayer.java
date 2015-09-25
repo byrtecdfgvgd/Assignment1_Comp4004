@@ -114,6 +114,14 @@ public class PokerPlayer {
 	//returns High Card if present
 	protected int checkFlush()
 	{
-		return 0;
+		if (hand[0].getSuit() == hand[1].getSuit() && hand[0].getSuit() == hand[2].getSuit()
+				&& hand[0].getSuit() == hand[3].getSuit() && hand[0].getSuit() == hand[4].getSuit())
+		{
+			return hand[4].getNumber();
+		}
+		else
+		{
+			return -1;
+		}
 	}
 }
