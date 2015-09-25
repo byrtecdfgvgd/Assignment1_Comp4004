@@ -160,6 +160,15 @@ public class PokerPlayer {
 	//returns High Card if present
 	protected int checkThreeOAK(int fourOAK)
 	{		
-		return 0;
+		for (int i = 2; i < hand.length; i++)
+		{
+			if (hand[i - 2].getNumber() == hand[i-1].getNumber() && 
+					hand[i-1].getNumber() == hand[i].getNumber() && hand[i].getNumber() != fourOAK)
+			{
+				return hand[i].getNumber();
+			}
+		}
+		
+		return -1;
 	}
 }
