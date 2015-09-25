@@ -70,10 +70,20 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 TwoHearts TwoDiamonds TwoClubs FourSpades SixHearts");
 		testPlayer.sortHand();
 		assertEquals(2 ,testPlayer.checkThreeOAK(-1));
-		//non-4OAK
+		//non-3OAK
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
-		assertEquals(-1 ,testPlayer.checkThreeOAK(-1));		
+		assertEquals(-1 ,testPlayer.checkThreeOAK(-1));
+		
+		//testing checkPair()
+		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs FourSpades SixHearts");
+		testPlayer.sortHand();
+		assertEquals(2 ,testPlayer.checkPair(-1, -1));
+		//non-pair
+		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
+		testPlayer.sortHand();
+		assertEquals(-1 ,testPlayer.checkPair(-1, -1));
+		
 		
 	}
 	
