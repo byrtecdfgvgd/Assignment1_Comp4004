@@ -124,4 +124,12 @@ public class PokerPlayer {
 			return -1;
 		}
 	}
+	
+	// -> Int
+	//Checks if a straight is present
+	//returns High Card if present
+	protected int checkStraight ()
+	{	
+		return 0;
+	}
 }

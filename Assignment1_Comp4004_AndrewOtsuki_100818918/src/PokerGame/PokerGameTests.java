@@ -41,13 +41,16 @@ public class PokerGameTests {
 		testPlayer.sortHand();
 		assertEquals ("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts", testPlayer.toString());
 		
-		//testing Check Flush
+		//testing checkFlush()
 		assertEquals(6 ,testPlayer.checkFlush());
 		//non-flush
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts SixHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkFlush());
 		
+		//testing checkStraight()
+		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
+		assertEquals(6 ,testPlayer.checkStraight());
 		
 	}
 	
