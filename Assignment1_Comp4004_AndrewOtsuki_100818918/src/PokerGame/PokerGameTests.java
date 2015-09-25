@@ -51,6 +51,10 @@ public class PokerGameTests {
 		//testing checkStraight()
 		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
 		assertEquals(6 ,testPlayer.checkStraight());
+		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
+		testPlayer.sortHand();
+		assertEquals(-1 ,testPlayer.checkStraight());
+		
 		
 	}
 	
