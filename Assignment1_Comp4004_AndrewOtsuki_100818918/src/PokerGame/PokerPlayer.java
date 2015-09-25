@@ -204,6 +204,59 @@ public class PokerPlayer {
 	//checks the value of a hand i.e. flush, high card, pair, etc.
 	public void getHandValue()
 	{
+		handValue = new HandData();
 		
+		sortHand();
+		
+		handValue.highCard = hand[4].getNumber();
+		
+		handValue.flush = checkFlush();
+		handValue.straight = checkStraight();
+		handValue.fourOAK = checkFourOAK();
+		handValue.threeOAK = checkThreeOAK(handValue.fourOAK);
+		handValue.pair1 = checkPair(handValue.threeOAK, handValue.fourOAK);
+		handValue.pair2 = checkPair2(handValue.pair1, handValue.fourOAK, handValue.threeOAK);
+		
+		
+		if (handValue.flush != -1 && handValue.straight != -1 && handValue.flush == 14)
+		{
+			handValue.handVal = 9;
+		}
+		else if (handValue.flush != -1 && handValue.straight != -1)
+		{
+			handValue.handVal = 8;
+		}		
+		else if (handValue.fourOAK != -1)
+		{
+			handValue.handVal = 7;
+		}	
+		else if (handValue.threeOAK != -1 && handValue.pair1 != -1)
+		{
+			handValue.handVal = 6;
+		}	
+		else if (handValue.flush != -1)
+		{
+			handValue.handVal = 5;
+		}	
+		else if (handValue.straight != -1)
+		{
+			handValue.handVal = 4;
+		}	
+		else if (handValue.threeOAK != -1)
+		{
+			handValue.handVal = 3;
+		}	
+		else if (handValue.pair1 != -1 && handValue.pair2 != -1)
+		{
+			handValue.handVal = 2;
+		}	
+		else if (handValue.pair1 != -1)
+		{
+			handValue.handVal = 1;
+		}	
+		else 
+		{
+			handValue.handVal = 0;
+		}	
 	}
 }

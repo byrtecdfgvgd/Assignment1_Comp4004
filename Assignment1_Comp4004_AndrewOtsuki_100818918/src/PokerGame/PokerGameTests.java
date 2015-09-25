@@ -94,6 +94,7 @@ public class PokerGameTests {
 		assertEquals(-1 ,testPlayer.checkPair2(2, -1, -1));	
 		
 		//Tests for getHandValue()
+		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
 		//checking for a flush
 		testPlayer.getHandValue();
 		assertEquals(6, testPlayer.handValue.flush);
