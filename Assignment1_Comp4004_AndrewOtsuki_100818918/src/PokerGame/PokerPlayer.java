@@ -92,8 +92,21 @@ public class PokerPlayer {
 	
 	}
 	
-	//Sorts the players hand numerically//
+	//Sorts the players hand numerically
 	public void sortHand()
 	{
+		//sort Hand 
+		for (int i = 0; i < hand.length; i++)
+		{
+			for (int k = i + 1; k < hand.length; k++)
+			{				
+				if (hand[k].getNumber() < hand[i].getNumber())
+				{
+					Card temp = hand[i];
+					hand[i] = hand[k];
+					hand[k] = temp;
+				}
+			}
+		}
 	}
 }
