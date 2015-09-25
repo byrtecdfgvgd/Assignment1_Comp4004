@@ -91,4 +91,9 @@ public class PokerPlayer {
 		return output;
 	
 	}
+	
+	//Sorts the players hand numerically
+	public void sortHand()
+	{
+	}
 }
