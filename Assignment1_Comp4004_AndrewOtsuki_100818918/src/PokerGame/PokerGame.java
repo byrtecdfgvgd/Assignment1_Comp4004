@@ -27,4 +27,10 @@ public class PokerGame {
 		}			
 	}
 	
+	//sorts each player in the arrays hand based on card values
+		//can be tested vie checkign the player ordering after this is called
+		public void sortHands()
+		{
+		}
+	
 }

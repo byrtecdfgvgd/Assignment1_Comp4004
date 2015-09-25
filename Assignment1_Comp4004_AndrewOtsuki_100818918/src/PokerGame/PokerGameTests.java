@@ -43,6 +43,14 @@ public class PokerGameTests {
 		//Testing Check High card
 		myGame.checkHighCards(0, 3);
 		assertEquals("Player2", myGame.players[3].getID());
+		
+		//Testing the hand sorting function		
+		myGame.sortHands();
+		
+		assertEquals("Player4", myGame.players[0].getID());
+		assertEquals("Player2", myGame.players[1].getID());
+		assertEquals("Player1", myGame.players[2].getID());
+		assertEquals("Player3", myGame.players[3].getID());
 	}
 	
 	
