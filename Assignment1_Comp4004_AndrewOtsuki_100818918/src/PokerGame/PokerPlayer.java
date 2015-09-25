@@ -130,6 +130,15 @@ public class PokerPlayer {
 	//returns High Card if present
 	protected int checkStraight ()
 	{	
-		return 0;
+		//see if straight is present
+		if (hand[0].getNumber() + 1 == hand[1].getNumber() && hand[0].getNumber() + 2 == hand[2].getNumber()
+				&& hand[0].getNumber() + 3 == hand[3].getNumber() && hand[0].getNumber() + 4 == hand[4].getNumber())
+		{
+			return hand[4].getNumber();
+		}
+		else
+		{
+			return -1;
+		}
 	}
 }
