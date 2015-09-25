@@ -185,4 +185,11 @@ public class PokerPlayer {
 		}
 		return -1;
 	}
+	
+	//checks if a 2nd pair is present in the hand,
+	//and it is not equal to the three of a kind should that also be present
+	protected int checkPair2(int pair1, int fourOAK, int threeOAK)
+	{
+		return -1;
+	}
 }
