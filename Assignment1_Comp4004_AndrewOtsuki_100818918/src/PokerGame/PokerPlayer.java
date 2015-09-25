@@ -156,4 +156,10 @@ public class PokerPlayer {
 		
 		return -1;
 	}
+	
+	//returns High Card if present
+	protected int checkThreeOAK(int fourOAK)
+	{		
+		return 0;
+	}
 }
