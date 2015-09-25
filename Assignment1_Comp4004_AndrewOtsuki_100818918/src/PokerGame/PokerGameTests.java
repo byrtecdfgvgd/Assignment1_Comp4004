@@ -39,6 +39,10 @@ public class PokerGameTests {
 		//testing flip players
 		myGame.flipPlayers(0,1);
 		assertEquals("Player2", myGame.players[0].getID());
+		
+		//Testing Check High card
+		myGame.checkHighCards(0, 3);
+		assertEquals("Player2", myGame.players[3].getID());
 	}
 	
 	

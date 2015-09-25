@@ -13,4 +13,10 @@ public class PokerGame {
 		players[player2] = temp;		
 	}
 	
+	//checks each card in 2 hands to find which one has 
+	//a higher card
+	public void checkHighCards(int player1, int player2)
+	{			
+	}
+	
 }
