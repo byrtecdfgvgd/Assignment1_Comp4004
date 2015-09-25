@@ -16,7 +16,15 @@ public class PokerGame {
 	//checks each card in 2 hands to find which one has 
 	//a higher card
 	public void checkHighCards(int player1, int player2)
-	{			
+	{
+		for (int k = 4; k >= 0; k--)
+		{
+			if (players[player2].getCard(k).getNumber() < players[player1].getCard(k).getNumber())
+			{
+				flipPlayers(player1, player2);
+				break;
+			}
+		}			
 	}
 	
 }
