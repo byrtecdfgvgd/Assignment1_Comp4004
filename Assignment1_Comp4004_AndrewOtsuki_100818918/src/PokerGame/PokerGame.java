@@ -174,11 +174,19 @@ public class PokerGame {
 		Card testCard = new Card();
 		int isCard = testCard.setCard(myCard);
 		
+		if (isCard != 0)
+		{
+			return -1;
+		}
+		
 		for (int i = 0; i < playerNum; i++)
 		{
 			for (int j = 0; j < cardNum; j++)
 			{
-				//if (players[i].getCard(j))
+				if (players[i].getCard(j).isEqual(testCard))
+				{
+					return -1;
+				}
 			}
 		}
 		
