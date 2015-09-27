@@ -169,8 +169,24 @@ public class PokerGame {
 		return 0;
 	}
 	
-	protected int checkID(String input)
+	protected int checkID(String input, int curPlayers)
 	{
+		Card testCard = new Card();
+		int isCard = testCard.setCard(input);
+		
+		for (int i = 0; i < curPlayers; i++)
+		{
+			if (players[i].getID().equals(input))
+			{
+				return -1;
+			}
+		}
+		
+		if (isCard == 0)
+		{
+			return -1;
+		}
+		
 		return 0;
 	}
 	

@@ -62,11 +62,11 @@ public class PokerGameTests {
 		//for the purposes of this assignment a valid id is one that has not been taken and is not a card i.e. TwoClubs
 		//will not be accepted but Player1 or 09872634 or ID1 etc will be accepted
 			//new ID
-		assertEquals(0, myGame.checkID("Player7"));
+		assertEquals(0, myGame.checkID("Player7", 4));
 			//used ID
-		assertEquals(-1, myGame.checkID("Player1"));
+		assertEquals(-1, myGame.checkID("Player1", 4));
 			//improper id
-		assertEquals(-1, myGame.checkID("TwoClubs"));
+		assertEquals(-1, myGame.checkID("TwoClubs", 4));
 	}
 	
 	
