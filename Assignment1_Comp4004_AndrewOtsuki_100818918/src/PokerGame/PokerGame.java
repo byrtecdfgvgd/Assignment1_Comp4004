@@ -148,6 +148,13 @@ public class PokerGame {
 		}
 	}
 	
+	//check input length, checks number of words in an array
+	protected int checkInputLength(String input)
+	{
+		return 0;
+	}
+	
+	
 	//These functions cannot really be tested, but are simply what I would have had in the main function
 	//broken up neatly to encapsulate what the main function needs to do as far as getting input and outputting the hands
 	
@@ -174,8 +181,12 @@ public class PokerGame {
 		
 		numPlayers = 0;
 		
-		System.out.println("How many players? enter a number for 2-4, and press enter.");
-		numPlayers = keyboard.nextInt();
+		
+		while (numPlayers < 2 && numPlayers > 4)
+		{
+			System.out.println("How many players? enter a number from 2-4, and press enter.");
+			numPlayers = keyboard.nextInt();
+		}
 		input = keyboard.nextLine();
 		input = "";
 		
@@ -185,6 +196,7 @@ public class PokerGame {
 		{
 			players[i] = new PokerPlayer();
 			
+			//TODO ensure proper cards, proper number, player id entered first, duplicate cards
 			System.out.println("input players hand i.e. Player1 OneHearts TwoHearts ThreeClubs fourClubs fiveClubs");
 			input = keyboard.nextLine();
 			
