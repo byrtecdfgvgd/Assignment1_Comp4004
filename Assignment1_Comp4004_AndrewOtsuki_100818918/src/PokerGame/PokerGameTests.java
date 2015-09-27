@@ -57,6 +57,16 @@ public class PokerGameTests {
 		assertEquals(0, myGame.checkInputLength("Player4 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
 		assertEquals(-1, myGame.checkInputLength("Player4 ThreeClubs TwoSpades FourSpades SixClubs"));
 		assertEquals(-1, myGame.checkInputLength("Player4 FourClubs EightSpades TwoClubs TwoSpades FourSpades SixClubs"));
+		
+		//testing a checker for ID's to ensure they are valid and an the first position and not already taken
+		//for the purposes of this assignment a valid id is one that has not been taken and is not a card i.e. TwoClubs
+		//will not be accepted but Player1 or 09872634 or ID1 etc will be accepted
+			//new ID
+		assertEquals(0, myGame.checkID("Player7"));
+			//used ID
+		assertEquals(-1, myGame.checkID("Player1"));
+			//improper id
+		assertEquals(-1, myGame.checkID("TwoClubs"));
 	}
 	
 	

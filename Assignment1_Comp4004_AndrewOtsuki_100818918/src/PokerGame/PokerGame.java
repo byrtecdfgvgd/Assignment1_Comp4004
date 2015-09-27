@@ -169,6 +169,11 @@ public class PokerGame {
 		return 0;
 	}
 	
+	protected int checkID(String input)
+	{
+		return 0;
+	}
+	
 	
 	//These functions cannot really be tested, but are simply what I would have had in the main function
 	//broken up neatly to encapsulate what the main function needs to do as far as getting input and outputting the hands
