@@ -151,6 +151,21 @@ public class PokerGame {
 	//check input length, checks number of words in an array
 	protected int checkInputLength(String input)
 	{
+		int spaceCount = 0;
+		
+		for (int i = 0; i < input.length(); i++)
+		{
+			if (input.charAt(i) == ' ')
+			{
+				spaceCount++;
+			}
+		}
+		
+		if (spaceCount != 5)
+		{
+			return -1;
+		}
+		
 		return 0;
 	}
 	

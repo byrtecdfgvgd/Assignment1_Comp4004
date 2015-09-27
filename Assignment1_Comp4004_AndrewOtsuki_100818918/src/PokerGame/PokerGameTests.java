@@ -54,9 +54,9 @@ public class PokerGameTests {
 		
 		
 		//testing a checker for counting number of words in the input
-		assertEquals(6, myGame.checkInputLength("Player4 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
-		assertEquals(6, myGame.checkInputLength("Player4 ThreeClubs TwoSpades FourSpades SixClubs"));
-		assertEquals(6, myGame.checkInputLength("Player4 TwoClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(0, myGame.checkInputLength("Player4 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInputLength("Player4 ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInputLength("Player4 FourClubs EightSpades TwoClubs TwoSpades FourSpades SixClubs"));
 	}
 	
 	
