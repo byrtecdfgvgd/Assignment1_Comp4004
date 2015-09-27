@@ -9,7 +9,12 @@ import PokerGame.PokerPlayer;
 
 public class PokerGameTests {
 
-	//Tests for PokerGames
+	//------------------------------Poker Game Tests------------------------------------------------
+	
+	//Tests for PokerGames - many of these tests rely on information created at the start of this function it
+		//ended up feeling more redundant to rewrite this function into individual function tests when half
+		//the method would of had to have been coppy and pasted over anyways for these tests to run as such
+		//Poker game tests are all within a single well commented function
 	@Test
 	public void testGames()
 	{
@@ -35,6 +40,7 @@ public class PokerGameTests {
 			myGame.players[i].sortHand();
 			myGame.players[i].getHandValue();
 		}
+		//End Variable Setup
 		
 		//testing flip players
 		myGame.flipPlayers(0,1);
@@ -66,7 +72,7 @@ public class PokerGameTests {
 			//new ID
 		assertEquals(0, myGame.checkID("Player7", 4));
 			//used ID
-		assertEquals(-1, myGame.checkID("Player1", 4));
+		assertEquals(-1, myGame.checkID("Player4", 4));
 			//improper id
 		assertEquals(-1, myGame.checkID("TwoClubs", 4));
 		
@@ -91,9 +97,9 @@ public class PokerGameTests {
 	}
 	
 	
-	//Tests for PokerPlayers
+	//---------------------------Tests for PokerPlayers---------------------------------------------------
 	@Test
-	public void testPlayers()
+	public void testPokerPlayerSetnGetID()
 	{
 		PokerPlayer testPlayer = new PokerPlayer();
 		
@@ -101,12 +107,22 @@ public class PokerGameTests {
 		//ID
 		testPlayer.setID("player1");
 		assertEquals("player1", testPlayer.getID());
-		
-		
+	}
+	
+	@Test
+	public void testPokerPlayerSetnGetCard()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
+				
 		//Testing setCardAtI() and getcard()
 		testPlayer.setCardAtI(0, "FourClubs");
 		assertEquals("FourClubs", testPlayer.getCard(0).toString());
-		
+	}
+	
+	@Test
+	public void testPokerPlayerSetPlayer()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//Testing setPlayer()
 		//extracts id and card info from string
@@ -115,13 +131,37 @@ public class PokerGameTests {
 		assertEquals("TwoHearts", testPlayer.getCard(0).toString());
 		assertEquals("SixHearts", testPlayer.getCard(4).toString());
 		
+	}
+	
+	
+	@Test
+	public void testPokerPlayertoString()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
+
+		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
+
 		//Testing PokerPlayer toString() function
-		assertEquals("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts" ,testPlayer.toString());
+		assertEquals("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts" ,testPlayer.toString());		
+	}
+	
+	@Test
+	public void testPokerPlayerSortHand()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//Testing sortHand()
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts SixHearts TwoHearts FourHearts");
 		testPlayer.sortHand();
 		assertEquals ("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts", testPlayer.toString());
+	}
+	
+	@Test
+	public void testPokerPlayerCheckFlush()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
+
+		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
 		
 		//testing checkFlush()
 		assertEquals(6 ,testPlayer.checkFlush());
@@ -129,6 +169,12 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts SixHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkFlush());
+	}
+	
+	@Test
+	public void testPokerPlayerCheckStraight()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//testing checkStraight()
 		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
@@ -138,6 +184,11 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkStraight());
+	}
+	
+	public void testPokerPlayerCheckFourOAK()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//testing checkFourOAK()
 		testPlayer.setPlayer("Player1 TwoHearts TwoDiamonds TwoClubs TwoSpades SixHearts");
@@ -147,6 +198,12 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkFourOAK());
+			
+	}
+	
+	public void testPokerPlayerCheckThreeOAK()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//testing checkThreeOAK()
 		testPlayer.setPlayer("Player1 TwoHearts TwoDiamonds TwoClubs FourSpades SixHearts");
@@ -156,6 +213,12 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 FiveHearts ThreeHearts NineHearts TwoHearts FourClubs");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkThreeOAK(-1));
+			
+	}
+	
+	public void testPokerPlayerCheckPair()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//testing checkPair()
 		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs FourSpades SixHearts");
@@ -166,6 +229,12 @@ public class PokerGameTests {
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkPair(-1, -1));
 		
+	}
+	
+	public void testPokerPlayerCheck2Pair()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
+		
 		//testing checkPair2
 		testPlayer.setPlayer("Player1 TwoHearts ThreeClubs TwoClubs ThreeSpades SixHearts");
 		testPlayer.sortHand();
@@ -174,6 +243,12 @@ public class PokerGameTests {
 		testPlayer.setPlayer("Player1 TwoHearts ThreeDiamonds TwoClubs FourSpades SixHearts");
 		testPlayer.sortHand();
 		assertEquals(-1 ,testPlayer.checkPair2(2, -1, -1));	
+		
+	}
+	
+	public void testPokerPlayerGetHandValue()
+	{
+		PokerPlayer testPlayer = new PokerPlayer();
 		
 		//Tests for getHandValue()
 		testPlayer.setPlayer("Player1 TwoHearts ThreeHearts FourHearts FiveHearts SixHearts");
@@ -190,32 +265,40 @@ public class PokerGameTests {
 		assertEquals(-1, testPlayer.handValue.pair2);
 		assertEquals(-1, testPlayer.handValue.pair1);
 		
+		
 	}
 	
 	
-	//TESTS FOR CARDS
+	//-----------------CARD Tests-------------------------------------------
+	
 	@Test
-	public void testCards()
+	public void testCardSetnGetNumber()
 	{
 		Card testCard = new Card();
-		
 		
 		//test get and set methods for card number
 		//these functions must be tested together as 
 		//I need a way to check the private variables
 		testCard.setNumber(6);
 		assertEquals(6, testCard.getNumber());
-		
-		
-		
+	}
+	
+	@Test
+	public void testCardSetnGetSuit()
+	{
+		Card testCard = new Card();
 		
 		//test get and set methods for card suit
 		//these functions must be tested together as 
 		//I need a way to check the private variables
 		testCard.setSuit(1);
 		assertEquals(1, testCard.getSuit());
-		
-		
+	}
+	
+	@Test
+	public void testCardToString()
+	{
+		Card testCard = new Card();
 		
 		//Testing a cards toString() Functions
 		//test ace of clubs
@@ -230,6 +313,12 @@ public class PokerGameTests {
 		testCard.setNumber(11);
 		testCard.setSuit(3);
 		assertEquals("JackSpades", testCard.toString());
+	}
+	
+	@Test
+	public void testCardSetCard()
+	{
+		Card testCard = new Card();
 		
 		//Testing Set Card Functions
 		//setCard(String) test1 *Valid Input*
@@ -245,7 +334,12 @@ public class PokerGameTests {
 		
 		//setCard(String) test4 *Invalid Input*
 		assertEquals(-2, testCard.setCard("TwoHeads"));
-		
+	}
+	
+	@Test
+	public void testCardisEqual()
+	{
+		Card testCard = new Card();
 		
 		//isEqual(Card anotherCard) testign if 2 cards are equal
 		testCard.setCard("QueenClubs");
@@ -255,4 +349,5 @@ public class PokerGameTests {
 		tempCard.setCard("ThreeHearts");
 		assertEquals(false , testCard.isEqual(tempCard));
 	}
+	
 }
