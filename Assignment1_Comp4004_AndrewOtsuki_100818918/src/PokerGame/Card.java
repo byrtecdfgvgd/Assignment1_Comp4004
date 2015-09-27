@@ -86,19 +86,19 @@ public class Card {
 			return -1;
 		}
 		
-		if (myCard.indexOf("Club") != -1)
+		if (myCard.indexOf("Clubs") != -1)
 		{
 			suit = 1;
 		}	
-		else if (myCard.indexOf("Heart") != -1)
+		else if (myCard.indexOf("Hearts") != -1)
 		{
 			suit = 2;
 		}
-		else if (myCard.indexOf("Spade") != -1)
+		else if (myCard.indexOf("Spades") != -1)
 		{
 			suit = 3;
 		}
-		else if (myCard.indexOf("Diamond") != -1)
+		else if (myCard.indexOf("Diamonds") != -1)
 		{
 			suit = 4;
 		}
@@ -192,6 +192,11 @@ public class Card {
 	
 	protected boolean isEqual(Card cmp)
 	{
+		if (number == cmp.getNumber() && suit == cmp.getSuit())
+		{
+			return true;
+		}
+		
 		return false;
 	}
 	

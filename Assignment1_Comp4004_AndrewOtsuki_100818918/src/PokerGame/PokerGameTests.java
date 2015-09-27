@@ -239,10 +239,11 @@ public class PokerGameTests {
 		
 		
 		//isEqual(Card anotherCard) testign if 2 cards are equal
+		testCard.setCard("QueenClubs");
 		Card tempCard = new Card();
 		tempCard.setCard("QueenClubs");
 		assertEquals(true, testCard.isEqual(tempCard));
 		tempCard.setCard("ThreeHearts");
-		assertEquals(true, testCard.isEqual(tempCard));
+		assertEquals(false , testCard.isEqual(tempCard));
 	}
 }
