@@ -152,12 +152,22 @@ public class PokerGame {
 	protected int checkInputLength(String input)
 	{
 		int spaceCount = 0;
+		boolean lastSpace = false;
 		
 		for (int i = 0; i < input.length(); i++)
 		{
-			if (input.charAt(i) == ' ')
+			if (input.charAt(i) == ' ' && !lastSpace)
 			{
+				lastSpace = true;
 				spaceCount++;
+			}
+			else if (input.charAt(i) == ' ')
+			{
+				return -1;
+			}
+			else if (lastSpace)
+			{
+				lastSpace = false;
 			}
 		}
 		
@@ -215,9 +225,15 @@ public class PokerGame {
 		return 0;
 	}
 	
+	protected int checkInput(String input)
+	{
+		return 0;
+	}
+	
 	
 	//These functions cannot really be tested, but are simply what I would have had in the main function
 	//broken up neatly to encapsulate what the main function needs to do as far as getting input and outputting the hands
+	//however this way is neater to look at
 	
 	//prints out players with thier ranks
 	//cannot be tested as all it does is print out the toString() 

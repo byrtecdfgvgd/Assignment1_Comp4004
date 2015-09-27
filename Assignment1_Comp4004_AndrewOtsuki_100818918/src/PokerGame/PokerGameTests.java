@@ -57,6 +57,8 @@ public class PokerGameTests {
 		assertEquals(0, myGame.checkInputLength("Player4 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
 		assertEquals(-1, myGame.checkInputLength("Player4 ThreeClubs TwoSpades FourSpades SixClubs"));
 		assertEquals(-1, myGame.checkInputLength("Player4 FourClubs EightSpades TwoClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInputLength("Player4  TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInputLength("Player4  TwoClubs TwoSpades FourSpades SixClubs"));
 		
 		//testing a checker for ID's to ensure they are valid and an the first position and not already taken
 		//for the purposes of this assignment a valid id is one that has not been taken and is not a card i.e. TwoClubs
@@ -79,6 +81,13 @@ public class PokerGameTests {
 		assertEquals(-1, myGame.checkCard("JackClubs" , 2, 4));
 		//not a card
 		assertEquals(-1, myGame.checkCard("thClubs" , 4, 4));
+		
+		//lastly I combine my checking fucntions into one fucntion that goes through an entire input string looking for mistakes
+		assertEquals(0, myGame.checkInput("Player9 FiveSpades SixSpades SevenSpades EightSpades NineSpades"));
+		assertEquals(-1, myGame.checkInput("Player1 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInput("TwoSpades TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInput("Player9  ThreeClubs TwoSpades FourSpades SixClubs"));
+		assertEquals(-1, myGame.checkInput("Player9 TwoSpades SixSpades SevenSpades EightSpades NineSpades"));
 	}
 	
 	
