@@ -13,16 +13,6 @@ Running my Code
 
 
 
-
-
-
-
-
-
-
-
-
-
 Card Tests
 testCardSetAndGetNumber() – Testing the set and get methods for a Cards number variable.
 testCardSetAndGetNumber() – Testing the set and get  methods for a Cards suit variable.
