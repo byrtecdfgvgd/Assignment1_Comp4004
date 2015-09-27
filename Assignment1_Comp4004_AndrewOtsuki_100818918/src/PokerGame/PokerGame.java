@@ -191,12 +191,25 @@ public class PokerGame {
 		
 		for (int i = 0; i < playerNum; i++)
 		{
-			for (int j = 0; j < cardNum; j++)
+			if (i == playerNum - 1)
 			{
-				if (players[i].getCard(j).isEqual(testCard))
+				for (int j = 0; j < cardNum; j++)
 				{
-					return -1;
+					if (players[i].getCard(j).isEqual(testCard))
+					{
+						return -1;
+					}
 				}
+			}
+			else
+			{
+				for (int j = 0; j < 5; j++)
+				{
+					if (players[i].getCard(j).isEqual(testCard))
+					{
+						return -1;
+					}
+				}			
 			}
 		}
 		
@@ -225,8 +238,64 @@ public class PokerGame {
 		return 0;
 	}
 	
-	protected int checkInput(String input)
+	protected int checkInput(String input, int playerIndex)
 	{
+		int len = 0;
+		int curCard = 0;
+		int id = 0;
+		String word = "";
+		boolean idDone = false;
+		int numDoneCards = 0; 
+		
+		len = checkInputLength(input);
+		
+		if (len != 0)
+		{
+			return -1;
+		}
+		else
+		{
+			for (int i = 0; i <= input.length(); i++)
+			{
+				if (i == input.length())
+				{
+					curCard = checkCard(word, playerIndex, numDoneCards); 
+					numDoneCards++;
+					
+					if (curCard != 0)
+					{
+						return -1;
+					}					
+				}
+				else if (input.charAt(i) == ' ' && !idDone)
+				{
+					idDone = true;
+					id = checkID(word, playerIndex);
+					if (id != 0)
+					{
+						return -1;
+					}
+					word = "";
+				}
+				else if (input.charAt(i) == ' ')
+				{
+					curCard = checkCard(word, playerIndex, numDoneCards); 
+					numDoneCards++;
+					
+					if (curCard != 0)
+					{
+						return -1;
+					}
+					
+					word = "";
+				}
+				else
+				{
+					word += input.charAt(i);
+				}
+			}
+		}
+		
 		return 0;
 	}
 	

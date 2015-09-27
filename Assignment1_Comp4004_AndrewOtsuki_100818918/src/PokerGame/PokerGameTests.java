@@ -83,11 +83,11 @@ public class PokerGameTests {
 		assertEquals(-1, myGame.checkCard("thClubs" , 4, 4));
 		
 		//lastly I combine my checking fucntions into one fucntion that goes through an entire input string looking for mistakes
-		assertEquals(0, myGame.checkInput("Player9 FiveSpades SixSpades SevenSpades EightSpades NineSpades"));
-		assertEquals(-1, myGame.checkInput("Player1 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
-		assertEquals(-1, myGame.checkInput("TwoSpades TwoClubs ThreeClubs TwoSpades FourSpades SixClubs"));
-		assertEquals(-1, myGame.checkInput("Player9  ThreeClubs TwoSpades FourSpades SixClubs"));
-		assertEquals(-1, myGame.checkInput("Player9 TwoSpades SixSpades SevenSpades EightSpades NineSpades"));
+		assertEquals(0, myGame.checkInput("Player9 FiveSpades SixSpades SevenSpades EightSpades NineSpades", 4));
+		assertEquals(-1, myGame.checkInput("Player1 TwoClubs ThreeClubs TwoSpades FourSpades SixClubs", 4));
+		assertEquals(-1, myGame.checkInput("TwoSpades TwoClubs ThreeClubs TwoSpades FourSpades SixClubs", 4));
+		assertEquals(-1, myGame.checkInput("Player9  ThreeClubs TwoSpades FourSpades SixClubs", 4));
+		assertEquals(-1, myGame.checkInput("Player9 TwoSpades SixSpades SevenSpades EightSpades NineSpades", 4));
 	}
 	
 	
