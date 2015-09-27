@@ -346,6 +346,14 @@ public class PokerGame {
 			System.out.println("input players hand i.e. Player1 OneHearts TwoHearts ThreeClubs fourClubs fiveClubs");
 			input = keyboard.nextLine();
 			
+			int correctInput = checkInput(input, i);
+			while (correctInput != 0)
+			{
+				System.out.println("________________________________________________");
+				System.out.println("Input error please renter the hand and player ID");
+				System.out.println("input players hand i.e. Player1 OneHearts TwoHearts ThreeClubs fourClubs fiveClubs");
+			}
+			
 			players[i].setPlayer(input);
 			
 			
