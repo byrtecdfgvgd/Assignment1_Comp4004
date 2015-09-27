@@ -169,6 +169,11 @@ public class PokerGame {
 		return 0;
 	}
 	
+	protected int checkCard(String card, int playerNum, int cardNum)
+	{
+		return 0;
+	}
+	
 	protected int checkID(String input, int curPlayers)
 	{
 		Card testCard = new Card();

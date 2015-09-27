@@ -67,6 +67,18 @@ public class PokerGameTests {
 		assertEquals(-1, myGame.checkID("Player1", 4));
 			//improper id
 		assertEquals(-1, myGame.checkID("TwoClubs", 4));
+		
+		//checking each card entered is indeed a card and is unique
+		//new unique card
+		assertEquals(0, myGame.checkCard("KingDiamonds" , 4, 5));
+		//used card
+		assertEquals(-1, myGame.checkCard("TwoHearts" , 4, 5));
+		//unique card up to position 2, 3 in list
+		assertEquals(0, myGame.checkCard("JackClubs" , 2, 3));
+		//used card
+		assertEquals(-1, myGame.checkCard("JackClubs" , 2, 4));
+		//not a card
+		assertEquals(-1, myGame.checkCard("thClubs" , 2, 4));
 	}
 	
 	
