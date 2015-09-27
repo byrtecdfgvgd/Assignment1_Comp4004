@@ -169,8 +169,20 @@ public class PokerGame {
 		return 0;
 	}
 	
-	protected int checkCard(String card, int playerNum, int cardNum)
+	protected int checkCard(String myCard, int playerNum, int cardNum)
 	{
+		Card testCard = new Card();
+		int isCard = testCard.setCard(myCard);
+		
+		for (int i = 0; i < playerNum; i++)
+		{
+			for (int j = 0; j < cardNum; j++)
+			{
+				//if (players[i].getCard(j))
+			}
+		}
+		
+		
 		return 0;
 	}
 	

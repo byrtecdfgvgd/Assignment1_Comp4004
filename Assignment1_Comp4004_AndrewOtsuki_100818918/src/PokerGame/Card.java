@@ -190,5 +190,9 @@ public class Card {
 		
 	}
 	
+	protected boolean isEqual(Card cmp)
+	{
+		return false;
+	}
 	
 }

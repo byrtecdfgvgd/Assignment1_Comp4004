@@ -70,15 +70,15 @@ public class PokerGameTests {
 		
 		//checking each card entered is indeed a card and is unique
 		//new unique card
-		assertEquals(0, myGame.checkCard("KingDiamonds" , 4, 5));
+		//assertEquals(0, myGame.checkCard("KingDiamonds" , 5, 5));
 		//used card
-		assertEquals(-1, myGame.checkCard("TwoHearts" , 4, 5));
+		//assertEquals(-1, myGame.checkCard("TwoHearts" , 5, 5));
 		//unique card up to position 2, 3 in list
-		assertEquals(0, myGame.checkCard("JackClubs" , 2, 3));
+		//assertEquals(0, myGame.checkCard("JackClubs" , 2, 3));
 		//used card
-		assertEquals(-1, myGame.checkCard("JackClubs" , 2, 4));
+		//assertEquals(-1, myGame.checkCard("JackClubs" , 2, 4));
 		//not a card
-		assertEquals(-1, myGame.checkCard("thClubs" , 2, 4));
+		//assertEquals(-1, myGame.checkCard("thClubs" , 5, 4));
 	}
 	
 	
@@ -238,6 +238,11 @@ public class PokerGameTests {
 		assertEquals(-2, testCard.setCard("TwoHeads"));
 		
 		
-		
+		//isEqual(Card anotherCard) testign if 2 cards are equal
+		Card tempCard = new Card();
+		tempCard.setCard("QueenClubs");
+		assertEquals(true, testCard.isEqual(tempCard));
+		tempCard.setCard("ThreeHearts");
+		assertEquals(true, testCard.isEqual(tempCard));
 	}
 }
